@@ -1,85 +1,190 @@
-.app {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background: #0f1117;
-  color: #f5f5f5;
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
 }
 
-/* =========================
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #f7f5f0;
+  color: #171717;
+}
+
+/* =========================================
+   MAIN PAGE
+   ========================================= */
+
+.app {
+  min-height: 100vh;
+
+  background-color: #f7f5f0;
+
+  background-image:
+    linear-gradient(
+      rgba(20, 20, 20, 0.055) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(20, 20, 20, 0.055) 1px,
+      transparent 1px
+    );
+
+  background-size: 48px 48px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================================
    HEADER
-========================= */
+   ========================================= */
 
 .header {
-  padding: 24px 40px;
-  border-bottom: 1px solid #252936;
+  width: calc(100% - 70px);
+
+  margin: 28px auto 0;
+  padding: 22px 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #fffdf9;
+
+  border: 2px solid #171717;
+  border-radius: 24px;
+
+  /* HARD DEPTH SHADOW */
+  box-shadow: 6px 6px 0 #171717;
 }
 
 .header h1 {
   margin: 0;
-  font-size: 28px;
+
+  font-family: 'Playfair Display', Georgia, serif;
+
+  font-size: 34px;
+  line-height: 1;
+
+  font-weight: 800;
+  letter-spacing: -1.5px;
+
+  color: #171717;
+
+  /* TEXT DEPTH */
+  text-shadow:
+    2px 2px 0 #d9d5ff,
+    4px 4px 0 rgba(23, 23, 23, 0.12);
 }
 
 .header p {
-  margin: 5px 0 0;
-  color: #8f96a3;
+  margin: 7px 0 0;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: #686868;
 }
 
-
-/* =========================
-   CHAT
-========================= */
+/* =========================================
+   CHAT AREA
+   ========================================= */
 
 .chat {
+  width: min(1050px, calc(100% - 70px));
+
   flex: 1;
-  width: 100%;
-  max-width: 900px;
+
   margin: 0 auto;
 
-  padding: 40px 24px 140px;
-
-  box-sizing: border-box;
+  overflow-y: auto;
 }
 
-
-/* =========================
+/* =========================================
    WELCOME
-========================= */
+   ========================================= */
 
 .welcome {
+  min-height: 68vh;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
   text-align: center;
-  margin-top: 120px;
+
+  padding: 80px 20px 180px;
 }
 
 .welcome h2 {
-  font-size: 32px;
-  margin-bottom: 12px;
+  max-width: 1000px;
+
+  margin: 0;
+
+  font-family: 'Playfair Display', Georgia, serif;
+
+  font-size: clamp(52px, 7vw, 92px);
+
+  line-height: 0.98;
+
+  font-weight: 800;
+
+  letter-spacing: -4px;
+
+  color: #171717;
+
+  /* KODNEST-STYLE DEPTH */
+
+  text-shadow:
+    2px 2px 0 #ffffff,
+    4px 4px 0 #d9d5ff,
+    6px 6px 0 rgba(23, 23, 23, 0.13);
 }
 
 .welcome p {
-  color: #8f96a3;
-  font-size: 17px;
+  max-width: 650px;
+
+  margin: 30px auto 0;
+
+  font-size: 19px;
+
+  line-height: 1.55;
+
+  font-weight: 500;
+
+  color: #55514b;
 }
 
-
-/* =========================
+/* =========================================
    MESSAGES
-========================= */
+   ========================================= */
 
 .messages {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+
+  gap: 35px;
+
+  padding: 70px 0 180px;
 }
 
-
-/* =========================
-   MESSAGE ROW
-========================= */
-
 .message-row {
-  display: flex;
   width: 100%;
+
+  display: flex;
 }
 
 .message-row.user {
@@ -90,99 +195,97 @@
   justify-content: flex-start;
 }
 
-
-/* =========================
-   MESSAGE CONTENT
-========================= */
-
 .message-content {
-  max-width: 70%;
+  max-width: min(720px, 80%);
 }
-
-.message-row.user .message-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-
-.message-row.assistant .message-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-
-/* =========================
-   MESSAGE NAME
-========================= */
 
 .message-name {
-  margin-bottom: 7px;
+  margin-bottom: 9px;
 
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 12px;
 
-  color: #8f96a3;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  color: #686868;
 }
 
 .message-row.user .message-name {
-  color: #8ab4f8;
+  text-align: right;
+
+  color: #5851d8;
 }
 
-
-/* =========================
-   MESSAGE BUBBLE
-========================= */
+/* =========================================
+   MESSAGE BUBBLES
+   ========================================= */
 
 .message-bubble {
-  padding: 13px 17px;
+  padding: 20px 24px;
 
-  border-radius: 16px;
+  background: #fffdf9;
 
-  line-height: 1.5;
+  border: 2px solid #171717;
+
+  border-radius: 20px;
+
   font-size: 16px;
 
-  background: #1b1e27;
-  border: 1px solid #292d38;
+  line-height: 1.65;
+
+  font-weight: 500;
+
+  color: #202020;
+
+  /* HARD DEPTH */
+
+  box-shadow: 5px 5px 0 #171717;
 }
-
-
-/* User bubble */
 
 .message-row.user .message-bubble {
-  background: #252a36;
-  border-color: #343a48;
+  background: #625bf2;
 
-  border-top-right-radius: 5px;
+  color: white;
+
+  border-color: #171717;
+
+  border-bottom-right-radius: 5px;
+
+  box-shadow: 5px 5px 0 #171717;
 }
-
-
-/* Assistant bubble */
 
 .message-row.assistant .message-bubble {
-  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
-
-/* =========================
+/* =========================================
    THINKING
-========================= */
+   ========================================= */
 
-.thinking {
+.message-bubble.thinking {
   display: flex;
-  align-items: center;
-  gap: 5px;
 
-  min-width: 48px;
+  align-items: center;
+
+  gap: 7px;
+
+  width: fit-content;
+
+  padding: 17px 22px;
 }
 
 .thinking span {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
+
+  background: #625bf2;
+
+  border: 1px solid #171717;
 
   border-radius: 50%;
-
-  background: #8f96a3;
 
   animation: thinking 1.2s infinite ease-in-out;
 }
@@ -199,91 +302,205 @@
   0%,
   60%,
   100% {
-    opacity: 0.3;
     transform: translateY(0);
   }
 
   30% {
-    opacity: 1;
-    transform: translateY(-3px);
+    transform: translateY(-6px);
   }
 }
 
-
-/* =========================
+/* =========================================
    INPUT AREA
-========================= */
+   ========================================= */
 
 .input-area {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+
+  left: 50%;
+  bottom: 28px;
+
+  transform: translateX(-50%);
+
+  width: min(950px, calc(100% - 70px));
 
   display: flex;
-  justify-content: center;
 
   gap: 10px;
 
-  padding: 20px;
+  padding: 8px;
 
-  background: rgba(15, 17, 23, 0.95);
+  background: #fffdf9;
 
-  border-top: 1px solid #252936;
+  border: 2px solid #171717;
+
+  border-radius: 22px;
+
+  box-shadow: 6px 6px 0 #171717;
+
+  z-index: 20;
 }
 
-
-/* Input */
+/* =========================================
+   INPUT
+   ========================================= */
 
 .input-area input {
-  width: min(700px, 70vw);
+  flex: 1;
 
-  padding: 14px 16px;
+  min-width: 0;
 
-  border: 1px solid #343945;
-  border-radius: 10px;
-
-  background: #181b22;
-  color: #f5f5f5;
-
-  font-size: 16px;
-
-  outline: none;
-}
-
-.input-area input:focus {
-  border-color: #6b7280;
-}
-
-
-/* Button */
-
-.input-area button {
-  padding: 0 22px;
+  padding: 16px 20px;
 
   border: none;
-  border-radius: 10px;
 
-  background: #f5f5f5;
-  color: #111318;
+  outline: none;
+
+  background: transparent;
+
+  font-family: 'DM Sans', sans-serif;
 
   font-size: 16px;
 
+  font-weight: 500;
+
+  color: #171717;
+}
+
+.input-area input::placeholder {
+  color: #88837b;
+}
+
+/* =========================================
+   SEND BUTTON
+   ========================================= */
+
+.input-area button {
+  min-width: 105px;
+
+  padding: 0 24px;
+
+  border: 2px solid #171717;
+
+  border-radius: 15px;
+
+  background: #625bf2;
+
+  color: #ffffff;
+
+  font-family: 'DM Sans', sans-serif;
+
+  font-size: 15px;
+
+  font-weight: 800;
+
   cursor: pointer;
+
+  /* PHYSICAL BUTTON */
+
+  box-shadow: 4px 4px 0 #171717;
+
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease;
 }
 
 .input-area button:hover:not(:disabled) {
-  background: #dfe2e8;
+  transform: translate(-1px, -1px);
+
+  box-shadow: 5px 5px 0 #171717;
 }
 
+.input-area button:active:not(:disabled) {
+  transform: translate(3px, 3px);
 
-/* Disabled */
-
-.input-area input:disabled {
-  opacity: 0.6;
+  box-shadow: 1px 1px 0 #171717;
 }
 
 .input-area button:disabled {
-  opacity: 0.6;
+  opacity: 0.55;
+
   cursor: not-allowed;
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+  .header {
+    width: calc(100% - 28px);
+
+    margin-top: 14px;
+
+    padding: 18px 20px;
+
+    border-radius: 19px;
+
+    box-shadow: 4px 4px 0 #171717;
+  }
+
+  .header h1 {
+    font-size: 27px;
+  }
+
+  .header p {
+    font-size: 9px;
+
+    letter-spacing: 1px;
+  }
+
+  .chat {
+    width: calc(100% - 28px);
+  }
+
+  .welcome {
+    min-height: 70vh;
+
+    padding-bottom: 170px;
+  }
+
+  .welcome h2 {
+    font-size: 48px;
+
+    letter-spacing: -2.5px;
+
+    text-shadow:
+      2px 2px 0 #ffffff,
+      4px 4px 0 #d9d5ff;
+  }
+
+  .welcome p {
+    font-size: 16px;
+  }
+
+  .messages {
+    padding-top: 40px;
+  }
+
+  .message-content {
+    max-width: 88%;
+  }
+
+  .message-bubble {
+    padding: 16px 18px;
+
+    font-size: 15px;
+
+    box-shadow: 4px 4px 0 #171717;
+  }
+
+  .input-area {
+    width: calc(100% - 28px);
+
+    bottom: 14px;
+
+    box-shadow: 4px 4px 0 #171717;
+  }
+
+  .input-area button {
+    min-width: 80px;
+
+    padding: 0 16px;
+  }
 }
