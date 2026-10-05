@@ -29,7 +29,7 @@ The ultimate objective of PersonalPilot is to serve as an intelligent intermedia
 ## Live Demo
 
 You can view the user interface mockup here:  
-👉 **[PersonalPilot Live Frontend Demo](https://github.io)**
+👉 **https://mohammed-hamza-dev.github.io/PersonalPilot/**
 
 > ⚠️ **Note:** The static frontend demo hosted on GitHub Pages requires a locally running backend server to process live requests. It does not connect to a publicly hosted AI backend at this stage.
 
@@ -237,7 +237,7 @@ PersonalPilot aims to evolve into a private personal AI agent that can cleanly u
 ## Author
 
 **Mohammed Hamza A E**  
-* GitHub: [@mohammed-hamza-dev](https://github.com)
+* GitHub: https://github.com/mohammed-hamza-dev
 
 ---
 
